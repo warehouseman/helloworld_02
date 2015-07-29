@@ -6,8 +6,6 @@ checkout:
 dependencies:
   pre:
     - npm install -g starrynight
-  override:
-    - meteor list
   post:
     # install meteor
     - "curl https://install.meteor.com | /bin/sh"

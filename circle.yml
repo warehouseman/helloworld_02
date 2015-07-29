@@ -8,11 +8,8 @@ dependencies:
     - npm install -g starrynight
   post:
     # install meteor
-    - "pwd"
-    - "ls -l"
     - "curl https://install.meteor.com | /bin/sh"
     - "sleep 10"
-    - "cd helloworld"
     - "meteor &"
 
     # give Meteor some time to download packages, init data, and to start

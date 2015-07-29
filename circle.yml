@@ -3,17 +3,17 @@ checkout:
     - git submodule sync
     - git submodule update --init --recursive
 
+machine:
+  post:
+    - ./meteor:
+          background: true
+    - sleep 5
+
 dependencies:
   pre:
     - npm install -g starrynight
-  post:
-    # install meteor
-    - "curl https://install.meteor.com | /bin/sh"
-    - "sleep 10"
-    - "meteor &"
+    - curl https://install.meteor.com | /bin/sh
 
-    # give Meteor some time to download packages, init data, and to start
-    - "sleep 60"    
 test:
   override:
     - starrynight run-tests --framework nightwatch

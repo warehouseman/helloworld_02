@@ -3,18 +3,17 @@ checkout:
     - git submodule sync
     - git submodule update --init --recursive
 
-machine:
+dependencies:
+  pre:
+    - npm install -g starrynight
+    - curl https://install.meteor.com | /bin/sh
+
   override:
     - echo "Here!"
     - pwd
     - ./meteor:
           background: true
     - sleep 5
-
-dependencies:
-  pre:
-    - npm install -g starrynight
-    - curl https://install.meteor.com | /bin/sh
 
 test:
   override:

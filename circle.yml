@@ -1,14 +1,9 @@
 dependencies:
   pre:
-    - npm install -g starrynight
     - curl https://install.meteor.com | /bin/sh
-
-  override:
-    - echo "Here!"
-    - pwd
     - meteor:
           background: true
-    - sleep 30
+    - npm install -g starrynight
 
 test:
   post:

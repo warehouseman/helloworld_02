@@ -11,7 +11,7 @@ dependencies:
   override:
     - echo "Here!"
     - pwd
-    - ./meteor:
+    - meteor:
           background: true
     - sleep 30
 

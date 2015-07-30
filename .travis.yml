@@ -12,7 +12,7 @@ sudo: required
 env:
   global:
     - TRAVIS=true
-    - CONFIG_PREFIX=`npm config get prefix`
+    - CONFIG_PREFIX=$(npm config get prefix)
     - DISPLAY=:99.0
   matrix:
 
@@ -41,7 +41,6 @@ before_install:
   - "sleep 10"
 
   # setup Meteor app
-  - "cd webapp"
   - "meteor &"
 
   # give Meteor some time to download packages, init data, and to start

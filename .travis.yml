@@ -13,7 +13,6 @@ env:
   global:
     - TRAVIS=true
     - CONFIG_PREFIX=$(npm config get prefix)
-    - echo ${CONFIG_PREFIX}
     - DISPLAY=:99.0
   matrix:
 
@@ -23,6 +22,9 @@ cache:
     - .meteor
 
 before_install:
+  # Check the prefix
+  - echo ${CONFIG_PREFIX}
+
   # set up the node_modules dir, so we know where it is
   - "mkdir -p node_modules &"
 
@@ -48,4 +50,4 @@ before_install:
   - "sleep 60"
 
 # we're not installing starrynight globally, so we run the script from the local node_modules folder
-script: "starrynight run-tests --framework nightwatch-minimal"
+script: "starrynight run-tests --framework nightwatch"
